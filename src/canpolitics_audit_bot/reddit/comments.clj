@@ -60,7 +60,8 @@
 (defn was-deleted
   [subreddit link-id comment-id]
   (let
-    [thread (get-comment-thread subreddit link-id comment-id)]))
+    [thread (get-comment-thread subreddit link-id comment-id)]
+    (= 0 (count thread))))
 
 (defn extractLinks [comment]
   (let [cTxt (:body_html (:data comment))]
